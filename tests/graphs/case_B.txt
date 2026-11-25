@@ -1,0 +1,20 @@
+# Test case B - 8 nodes, 4 forward paths, 6 loops (2 self-loops, fractional gains),
+# non-touching pairs, triples AND a group of 4 loops.
+# Expected: Delta = 54, T = 4/9
+node: In, a, b, c, d, e, f, Out
+In, a, 1
+a, b, 2
+b, c, 1
+c, d, 3
+d, e, 1
+e, f, 2
+f, Out, 1
+a, a, 0.5
+c, b, -1
+d, d, -2
+f, e, -0.5
+In, c, 4
+b, e, 3
+f, a, -1
+input: In
+output: Out

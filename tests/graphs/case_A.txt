@@ -1,0 +1,19 @@
+# Test case A - 7 nodes, 6 forward paths, 7 loops, 3 non-touching pairs + 1 triple
+# Expected: Delta = 40, T = 4
+node: R, a, b, c, d, e, f, C
+R, a, 1
+a, b, 2
+b, c, 3
+c, d, 2
+d, e, 1
+e, f, 2
+f, C, 1
+a, c, 4
+c, e, 3
+b, a, -1
+d, c, -2
+f, e, -1
+e, b, -1
+R, c, 2
+input: R
+output: C
